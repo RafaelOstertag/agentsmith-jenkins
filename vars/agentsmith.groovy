@@ -1,0 +1,124 @@
+// Functions used by agentsmiths's Jenkinsfile.
+
+/**
+ * Make a stage name by appending the node name. This allows recording
+ * the status of the 'same' stage for different nodes.
+ */
+def makeStageName(name) {
+    return name + " " + NODE_NAME
+}
+
+def checkout() {
+    stage(makeStageName("checkout")) {
+	checkout scm
+    }
+}
+
+def makeChangeLog() {
+    stage(makeStageName("ChangeLog")) {
+	github.notifyPending("ChangeLog")
+	sh "git log --stat > ChangeLog"
+    }
+}
+
+def autoconf() {
+    stage(makeStageName("autoconf")) {
+	github.notifyPending("autoconf")
+	touch "README"
+	// AUTOCONF_VERSION and AUTOMAKE_VERSION is used on OpenBSD.
+	withEnv(["AUTOCONF_VERSION=2.69", "AUTOMAKE_VERSION=1.15"]) {
+	    sh "autoreconf -I m4 -i"
+	}
+    }
+}
+
+def runWithProfile(operatingSystem, body) {
+    ansiColor('xterm') {
+	buildProfiles.profiles[operatingSystem].each { profileName, profile ->
+	    environmentVariables = profile.env
+	    objectDirectoryName = "obj-" + profileName
+
+	    config = [
+		"environmentVariables": environmentVariables,
+		"profileName": profileName,
+		"profile": profile,
+		"objectDirectoryName": objectDirectoryName
+	    ]
+	    github.notifyPending("Building " + profileName)
+	    body.resolveStrategy = Closure.DELEGATE_FIRST
+	    body.delegate = config
+	    body()
+	}
+    }
+}
+
+/**
+ * Configure for a given operating system
+ *
+ * @param operatingSystem operating system. Refer to buildProfiles.groovy.
+ */
+def configure(operatingSystem) {
+    runWithProfile(operatingSystem) {
+	stage(makeStageName("clean " + profileName)) {
+	    sh "rm -rf $objectDirectoryName"
+	}
+	    
+	stage(makeStageName("configure " + profileName)) {
+	    dir (objectDirectoryName) {
+		withEnv(environmentVariables) {
+		    sh "../configure " + profile.flags.join(" ")
+		}
+	    }
+	}
+    }
+}
+
+/**
+ * Build.
+ *
+ * @param operatingSystem operating system. Refer to buildProfiles.groovy.
+ */
+def build(operatingSystem) {
+    runWithProfile(operatingSystem) {
+    	stage(makeStageName("build " + profileName)) {
+	    dir (objectDirectoryName) {
+		withEnv(environmentVariables) {
+		    sh '$MAKE all'
+		}
+	    }
+	}
+    }
+}
+
+/**
+ * Build.
+ *
+ * @param operatingSystem operating system. Refer to buildProfiles.groovy.
+ */
+def check(operatingSystem) {
+    runWithProfile(operatingSystem) {
+	stage(makeStageName("check " + profileName)) {
+	    dir (objectDirectoryName) {
+		withEnv(environmentVariables) {
+		    sh '$MAKE check'
+		}
+	    }
+	}
+    }
+}
+
+def notify(body) {
+    try {
+	body()
+	currentBuild.result = 'SUCCESS'
+	github.notifySuccess("All systems go")
+    } catch (e) {
+	currentBuild.result = 'FAILURE'
+	github.notifyFailure("Houston, we've had a problem here")
+	throw e
+    } finally {
+	emailext body: '''$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:
+
+Check console output at $BUILD_URL to view the results.''', recipientProviders: [[$class: 'DevelopersRecipientProvider']], subject: '[jenkins.guengel.ch] $PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!', to: 'rafi@guengel.ch'
+    }
+}
