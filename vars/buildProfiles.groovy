@@ -72,7 +72,7 @@ profiles = [
 		"CPP=cpp",
 		"LDFLAGS=",
 		"CFLAGS=",
-		"CXXFLAGS="
+		"CXXFLAGS=",
 		"MAKE=gmake"
 	    ],
 	    "flags": [
