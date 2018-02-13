@@ -89,14 +89,14 @@ profiles = [
 		"CC=cc",
 		"CXX=c++",
 		"CPP=cpp",
-		"LDFLAGS=",
+		"LDFLAGS=-L/usr/pkg/lib -Wl,--rpath -Wl,/usr/pkg/lib",
 		"CFLAGS=",
+		"CPPFLAGS=-I/usr/pkg/include",
 		"CXXFLAGS=",
 		"MAKE=gmake"
 	    ],
 	    "flags": [
-		"--disable-silent-rules",
-		"--with-openssl=/usr"
+		"--disable-silent-rules"
 	    ]
 	]
     ],
