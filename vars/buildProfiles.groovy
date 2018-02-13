@@ -95,7 +95,7 @@ profiles = [
 		"MAKE=gmake"
 	    ],
 	    "flags": [
-		"--disable-silent-rules"
+		"--disable-silent-rules",
 		"--with-openssl=/usr"
 	    ]
 	]
