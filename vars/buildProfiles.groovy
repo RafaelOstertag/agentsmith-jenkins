@@ -38,7 +38,8 @@ profiles = [
 		"MAKE=gmake"
 	    ],
 	    "flags": [
-		"--disable-silent-rules"
+		"--disable-silent-rules",
+		"--enable-debug"
 	    ],
 	    "makeflags": [
 	    ]
@@ -60,7 +61,8 @@ profiles = [
 		"MAKE=make"
 	    ],
 	    "flags": [
-		"--disable-silent-rules"
+		"--disable-silent-rules",
+		"--enable-debug"
 	    ],
 	    "makeflags": [
 		"CFLAGS='-Wall -pedantic -Werror'"
@@ -83,7 +85,8 @@ profiles = [
 		"MAKE=gmake"
 	    ],
 	    "flags": [
-		"--disable-silent-rules"
+		"--disable-silent-rules",
+		"--enable-debug"
 	    ],
 	    "makeflags": [
 		"CFLAGS='-Wall -pedantic -Werror'"
@@ -106,7 +109,8 @@ profiles = [
 		"MAKE=gmake"
 	    ],
 	    "flags": [
-		"--disable-silent-rules"
+		"--disable-silent-rules",
+		"--enable-debug"
 	    ],
 	    "makeflags": [
 		"CFLAGS='-Wall -pedantic -Werror'"
@@ -129,7 +133,8 @@ profiles = [
 		"MAKE=gmake"
 	    ],
 	    "flags": [
-		"--disable-silent-rules"
+		"--disable-silent-rules",
+		"--enable-debug"
 	    ],
 	    "makeflags": [
 		"CFLAGS='-Wall -pedantic -Werror'"
@@ -147,7 +152,8 @@ profiles = [
 		"MAKE=gmake"
 	    ],
 	    "flags": [
-		"--disable-silent-rules"
+		"--disable-silent-rules",
+		"--enable-debug"
 	    ],
 	    "makeflags": [
 		"CFLAGS='-Wall -pedantic -Werror'"
@@ -165,7 +171,8 @@ profiles = [
 		"MAKE=gmake"
 	    ],
 	    "flags": [
-		"--disable-silent-rules"
+		"--disable-silent-rules",
+		"--enable-debug"
 	    ],
 	    "makeflags": [
 		"CFLAGS='-Wall -pedantic -Werror'"
@@ -183,7 +190,8 @@ profiles = [
 		"MAKE=gmake"
 	    ],
 	    "flags": [
-		"--disable-silent-rules"
+		"--disable-silent-rules",
+		"--enable-debug"
 	    ],
 	    "makeflags": [
 		"CFLAGS='-Wall -pedantic -Werror'"
@@ -201,7 +209,8 @@ profiles = [
 		"MAKE=gmake"
 	    ],
 	    "flags": [
-		"--disable-silent-rules"
+		"--disable-silent-rules",
+		"--enable-debug"
 	    ],
 	    "makeflags": [
 		"CFLAGS='-Wall -pedantic -Werror'"
@@ -219,7 +228,8 @@ profiles = [
 		"MAKE=gmake"
 	    ],
 	    "flags": [
-		"--disable-silent-rules"
+		"--disable-silent-rules",
+		"--enable-debug"
 	    ],
 	    "makeflags": [
 		"CFLAGS='-Wall -pedantic -Werror'"
@@ -237,7 +247,8 @@ profiles = [
 		"MAKE=gmake"
 	    ],
 	    "flags": [
-		"--disable-silent-rules"
+		"--disable-silent-rules",
+		"--enable-debug"
 	    ],
 	    "makeflags": [
 		"CFLAGS='-Wall -pedantic -Werror'"
@@ -255,7 +266,8 @@ profiles = [
 		"MAKE=gmake"
 	    ],
 	    "flags": [
-		"--disable-silent-rules"
+		"--disable-silent-rules",
+		"--enable-debug"
 	    ],
 	    "makeflags": [
 		"CFLAGS='-Wall -pedantic -Werror'"
@@ -273,7 +285,8 @@ profiles = [
 		"MAKE=gmake"
 	    ],
 	    "flags": [
-		"--disable-silent-rules"
+		"--disable-silent-rules",
+		"--enable-debug"
 	    ],
 	    "makeflags": [
 		"CFLAGS='-Wall -pedantic -Werror'"
@@ -291,7 +304,8 @@ profiles = [
 		"MAKE=gmake"
 	    ],
 	    "flags": [
-		"--disable-silent-rules"
+		"--disable-silent-rules",
+		"--enable-debug"
 	    ],
 	    "makeflags": [
 		"CFLAGS='-Wall -pedantic -Werror'"
@@ -309,7 +323,8 @@ profiles = [
 		"MAKE=gmake"
 	    ],
 	    "flags": [
-		"--disable-silent-rules"
+		"--disable-silent-rules",
+		"--enable-debug"
 	    ],
 	    "makeflags": [
 		"CFLAGS='-Wall -pedantic -Werror'"
@@ -327,7 +342,8 @@ profiles = [
 		"MAKE=gmake"
 	    ],
 	    "flags": [
-		"--disable-silent-rules"
+		"--disable-silent-rules",
+		"--enable-debug"
 	    ],
 	    "makeflags": [
 		"CFLAGS='-Wall -pedantic -Werror'"
