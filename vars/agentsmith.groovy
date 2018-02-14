@@ -83,7 +83,7 @@ def build(operatingSystem) {
     	stage(makeStageName("build " + profileName)) {
 	    dir (objectDirectoryName) {
 		withEnv(environmentVariables) {
-		    sh '$MAKE all'
+		    sh '$MAKE all ' + profile.makeflags.join(" ")
 		}
 	    }
 	}
