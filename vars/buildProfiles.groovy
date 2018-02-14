@@ -39,7 +39,10 @@ profiles = [
 	    ],
 	    "flags": [
 		"--disable-silent-rules"
+	    ],
+	    "makeflags": [
 	    ]
+	    
 	]
     ],
     //
@@ -58,6 +61,9 @@ profiles = [
 	    ],
 	    "flags": [
 		"--disable-silent-rules"
+	    ],
+	    "makeflags": [
+		"CFLAGS='-Wall -pedantic -Werror'"
 	    ]
 	]
     ],
@@ -78,6 +84,9 @@ profiles = [
 	    ],
 	    "flags": [
 		"--disable-silent-rules"
+	    ],
+	    "makeflags": [
+		"CFLAGS='-Wall -pedantic -Werror'"
 	    ]
 	]
     ],
@@ -98,6 +107,9 @@ profiles = [
 	    ],
 	    "flags": [
 		"--disable-silent-rules"
+	    ],
+	    "makeflags": [
+		"CFLAGS='-Wall -pedantic -Werror'"
 	    ]
 	]
     ],
@@ -118,6 +130,9 @@ profiles = [
 	    ],
 	    "flags": [
 		"--disable-silent-rules"
+	    ],
+	    "makeflags": [
+		"CFLAGS='-Wall -pedantic -Werror'"
 	    ]
 	],
 	"fb-clang60-ports" : [
@@ -133,6 +148,9 @@ profiles = [
 	    ],
 	    "flags": [
 		"--disable-silent-rules"
+	    ],
+	    "makeflags": [
+		"CFLAGS='-Wall -pedantic -Werror'"
 	    ]
 	],
 	"fb-clang50-ports" : [
@@ -148,6 +166,9 @@ profiles = [
 	    ],
 	    "flags": [
 		"--disable-silent-rules"
+	    ],
+	    "makeflags": [
+		"CFLAGS='-Wall -pedantic -Werror'"
 	    ]
 	],
 	"fb-clang34-ports" : [
@@ -163,6 +184,9 @@ profiles = [
 	    ],
 	    "flags": [
 		"--disable-silent-rules"
+	    ],
+	    "makeflags": [
+		"CFLAGS='-Wall -pedantic -Werror'"
 	    ]
 	],
 	"fb-clang35-ports" : [
@@ -178,6 +202,9 @@ profiles = [
 	    ],
 	    "flags": [
 		"--disable-silent-rules"
+	    ],
+	    "makeflags": [
+		"CFLAGS='-Wall -pedantic -Werror'"
 	    ]
 	],
 	"fb-clang38-ports" : [
@@ -193,6 +220,9 @@ profiles = [
 	    ],
 	    "flags": [
 		"--disable-silent-rules"
+	    ],
+	    "makeflags": [
+		"CFLAGS='-Wall -pedantic -Werror'"
 	    ]
 	],
 	"fb-gcc47-ports" : [
@@ -208,6 +238,9 @@ profiles = [
 	    ],
 	    "flags": [
 		"--disable-silent-rules"
+	    ],
+	    "makeflags": [
+		"CFLAGS='-Wall -pedantic -Werror'"
 	    ]
 	],
 	"fb-gcc48-ports" : [
@@ -223,6 +256,9 @@ profiles = [
 	    ],
 	    "flags": [
 		"--disable-silent-rules"
+	    ],
+	    "makeflags": [
+		"CFLAGS='-Wall -pedantic -Werror'"
 	    ]
 	],
 	"fb-gcc49-ports" : [
@@ -238,6 +274,9 @@ profiles = [
 	    ],
 	    "flags": [
 		"--disable-silent-rules"
+	    ],
+	    "makeflags": [
+		"CFLAGS='-Wall -pedantic -Werror'"
 	    ]
 	],
 	"fb-gcc5-ports" : [
@@ -253,6 +292,9 @@ profiles = [
 	    ],
 	    "flags": [
 		"--disable-silent-rules"
+	    ],
+	    "makeflags": [
+		"CFLAGS='-Wall -pedantic -Werror'"
 	    ]
 	],
 	"fb-gcc6-ports" : [
@@ -268,6 +310,9 @@ profiles = [
 	    ],
 	    "flags": [
 		"--disable-silent-rules"
+	    ],
+	    "makeflags": [
+		"CFLAGS='-Wall -pedantic -Werror'"
 	    ]
 	],
 	"fb-gcc7-ports" : [
@@ -283,6 +328,9 @@ profiles = [
 	    ],
 	    "flags": [
 		"--disable-silent-rules"
+	    ],
+	    "makeflags": [
+		"CFLAGS='-Wall -pedantic -Werror'"
 	    ]
 	]
     ]
