@@ -95,7 +95,7 @@ def publish() {
 	dir("obj-default") {
 	    sshagent(['16bce2a7-451d-4be5-82cb-68efab430517']) {
 		// Eventhorizon only allows sftp
-		sh """sftp agentsmith-deploy@eventhorizon.dmz.kruemel.home:/var/www/jails/www/usr/local/www/apache24/data/myapps/agentsmith/downloads <<EOF
+		sh """sftp agentsmith-deploy@eventhorizon.dmz.kruemel.home:/var/www/jails/agentsmith/usr/local/www/apache24/downloads <<EOF
 put ${packageName}-${version}.tar.gz
 put ${packageName}-${version}.tar.bz2
 put ${packageName}-${version}.tar.xz
