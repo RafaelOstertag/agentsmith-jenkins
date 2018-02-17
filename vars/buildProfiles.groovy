@@ -82,7 +82,9 @@ profiles = [
 		"CPPFLAGS=-I/usr/local/include",
 		"CFLAGS=",
 		"CXXFLAGS=",
-		"MAKE=gmake"
+		"MAKE=gmake",
+		"AUTOCONF_VERSION=2.69",
+		"AUTOMAKE_VERSION=1.15"
 	    ],
 	    "flags": [
 		"--disable-silent-rules",
