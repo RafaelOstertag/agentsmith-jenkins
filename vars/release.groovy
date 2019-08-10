@@ -93,9 +93,8 @@ def publish() {
 	packageName = readPackageNameFromConfigureAc()
 	version = readVersionFromConfigureAc()
 	dir("obj-default") {
-	    sshagent(['16bce2a7-451d-4be5-82cb-68efab430517']) {
-		// Eventhorizon only allows sftp
-		sh """sftp agentsmith-deploy@eventhorizon.dmz.kruemel.home:/var/www/jails/agentsmith/usr/local/www/apache24/data/downloads <<EOF
+	    sshagent(['897482ed-9233-4d56-88c3-254b909b6316']) {
+		sh """sftp ec2-deploy@ec2-52-29-59-221.eu-central-1.compute.amazonaws.com:/data/www/agentsmith.guengel.ch/downloads <<EOF
 put ${packageName}-${version}.tar.gz
 put ${packageName}-${version}.tar.bz2
 put ${packageName}-${version}.tar.xz
